@@ -1,0 +1,96 @@
+
+@media (min-width: 337px)  and (max-width: 900.98px) { 
+
+    body {
+        width:initial;
+    }    
+
+    #menu-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        min-height: 70%;
+        background: rgb(2, 2, 2, 0.7);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+        transform: scale(0);
+        transition: 0.5s;
+    }
+
+    #menu-overlay.active{
+        transform: scale(1);
+        z-index: 9;
+    }
+
+    #menu-overlay ul {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #menu-overlay ul li {
+        position: relative;
+        list-style: none;
+        text-align: center;
+        display: block;
+    }
+
+    #menu-overlay ul li a {
+        position: relative;
+        text-decoration: none;
+        font-size: 1.5em;
+        padding: 0 10px;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+
+    #menu-overlay ul li a::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: #ccc;
+        transform: translateY(-50%) scale(0);
+        transform-origin: right;
+        transition: 0.5s transform;
+    }
+
+    #menu-overlay ul li a:hover::before{
+        transform: translateY(-50%) scale(1);
+        transform-origin: left;
+        transition: 0.5s transform;
+    }
+
+    #toggleIcon {
+        position: fixed center;
+        top: 0;
+        right: 0;
+        width: 25px;
+        height: 25px;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    
+    header li.divisor {
+        display: none;
+    }
+}
+
+
+@media (min-width: 900.98px) {
+    #toggleIcon{
+        display: none;
+    }
+
+}
